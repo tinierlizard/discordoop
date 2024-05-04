@@ -2,6 +2,7 @@ import { ApplicationCommandOptionData, Client, CommandInteraction, Events } from
 
 export class Event {
     constructor(data: EventData);
+    data: EventData;
     public init(client: Client): Promise<boolean>;
     public run(): StatusMessage;
 }

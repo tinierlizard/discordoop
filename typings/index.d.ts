@@ -1,9 +1,9 @@
-import { ApplicationCommandOptionData, CommandInteraction } from "discord.js";
+import { ApplicationCommandOptionData, Client, CommandInteraction, Events } from "discord.js";
 
 export class Event {
     constructor(data: EventData);
-    init(): Promise<boolean>;
-    run(): Promise<boolean>;
+    public init(client: Client): Promise<boolean>;
+    public run(): StatusMessage;
 }
 
 export class Command  {
@@ -30,7 +30,7 @@ export interface CommandData {
 }
 
 export interface EventData {
-    type: Event;
-    init?(): Promise<boolean>;
-    run?(): Promise<boolean>;
+    type: Events;
+    init?(client: Client): Promise<boolean>;
+    run?(): StatusMessage;
 }

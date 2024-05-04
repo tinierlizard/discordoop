@@ -18,4 +18,6 @@ export interface CommandData {
     name: string;
     isNSFW: boolean;
     runContext: "USER" | "MSG" | "CHI";
+    run(int: CommandInteraction): StatusMessage;
+    init?(int: CommandInteraction): null;
 }

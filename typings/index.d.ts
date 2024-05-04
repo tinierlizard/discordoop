@@ -1,4 +1,4 @@
-import { CommandInteraction } from "discord.js";
+import { ApplicationCommandOptionData, CommandInteraction } from "discord.js";
 
 export class Command implements CommandData {
     constructor(data: CommandData);
@@ -18,6 +18,9 @@ export interface CommandData {
     name: string;
     isNSFW: boolean;
     runContext: "USER" | "MSG" | "CHI";
+    desc: string;
     run(int: CommandInteraction): StatusMessage;
     init?(int: CommandInteraction): null;
+    dmPermission?: boolean = false;
+    options?: Array<ApplicationCommandOptionData>;
 }

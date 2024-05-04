@@ -3,9 +3,7 @@
  */
 class Command {
     constructor(CommandData) {
-        this.name = CommandData.name;
-        this.nsfw = CommandData.isNSFW;
-        this.runContext = CommandData.runContext;
+        this.data = CommandData;
     }
 }
 

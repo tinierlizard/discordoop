@@ -24,6 +24,5 @@ export interface CommandData {
     desc: string;
     run?(int: CommandInteraction): StatusMessage;
     init?(int: CommandInteraction): null;
-    dmPermission?: boolean = false;
     options?: Array<ApplicationCommandOptionData>;
 }

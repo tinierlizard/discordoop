@@ -1,6 +1,7 @@
 import { CommandInteraction } from "discord.js";
 
 export class Command implements CommandData {
+    constructor(data: CommandData);
     name: string;
     isNSFW: boolean;
     runContext: "USER" | "MSG" | "CHI";

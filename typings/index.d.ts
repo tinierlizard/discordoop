@@ -4,6 +4,9 @@ export class Command implements CommandData {
     constructor(data: CommandData);
     name: string;
     isNSFW: boolean;
+    desc: string;
+    options?: ApplicationCommandOptionData[] | undefined;
+    dmPermission?: boolean | undefined;
     runContext: "USER" | "MSG" | "CHI";
     public run(int: CommandInteraction): StatusMessage;
     public init?(int: CommandInteraction): null;

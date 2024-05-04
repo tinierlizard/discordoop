@@ -19,8 +19,6 @@ export interface CommandData {
     isNSFW: boolean;
     runContext: "USER" | "MSG" | "CHI";
     desc: string;
-    run(int: CommandInteraction): StatusMessage;
-    init?(int: CommandInteraction): null;
     dmPermission?: boolean = false;
     options?: Array<ApplicationCommandOptionData>;
 }

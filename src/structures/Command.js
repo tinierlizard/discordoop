@@ -8,3 +8,5 @@ class Command {
         this.runContext = CommandData.runContext;
     }
 }
+
+module.exports = Command;

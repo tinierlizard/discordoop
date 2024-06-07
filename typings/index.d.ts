@@ -25,9 +25,11 @@ export interface StatusMessage {
 export interface CommandData {
     name: string;
     isNSFW: boolean;
-    runContext: "USER" | "MSG" | "CHI";
+    commandType: "USER" | "MSG" | "CHI";
     desc: string;
     dmPermission?: boolean | undefined;
+    integrationTypes: "GUILD" | "USER",
+    contextTypes: "GUILD" | "BOT_DM" | "PRIV_CHAN"
     run?(int: CommandInteraction): Promise<StatusMessage>;
     init?(int: CommandInteraction): null;
     options?: Array<ApplicationCommandOptionData>;

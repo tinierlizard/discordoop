@@ -25,9 +25,11 @@ export interface StatusMessage {
 export interface CommandData {
     name: string;
     isNSFW: boolean;
-    runContext: "USER" | "MSG" | "CHI";
+    commandType: "USER" | "MSG" | "CHI";
     desc: string;
     dmPermission?: boolean | undefined;
+    integrationTypes: Array<IntegrationTypes>,
+    contextTypes: Array<ContextTypes>,
     run?(int: CommandInteraction): Promise<StatusMessage>;
     init?(int: CommandInteraction): null;
     options?: Array<ApplicationCommandOptionData>;
@@ -38,4 +40,16 @@ export interface EventData {
     client?;
     init?(client: Client): Promise<boolean>;
     run?(any): void;
+}
+
+// Enums
+export enum IntegrationTypes {
+    "GUILD" = 0,
+    "USER" = 1
+}
+
+export enum ContextTypes {
+    "GUILD" = 0,
+    "BOT_DM" = 1,
+    "PRIV_CHAN" = 2,
 }

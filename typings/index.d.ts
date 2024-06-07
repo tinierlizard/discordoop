@@ -27,6 +27,7 @@ export interface CommandData {
     isNSFW: boolean;
     commandType: "USER" | "MSG" | "CHI";
     desc: string;
+    guildID?: string;
     dmPermission?: boolean | undefined;
     integrationTypes: Array<IntegrationTypes>,
     contextTypes: Array<ContextTypes>,

@@ -43,12 +43,12 @@ export interface EventData {
 }
 
 // Enums
-export enum IntegrationTypes {
+export const enum IntegrationTypes {
     "GUILD" = 0,
     "USER" = 1
 }
 
-export enum ContextTypes {
+export const enum ContextTypes {
     "GUILD" = 0,
     "BOT_DM" = 1,
     "PRIV_CHAN" = 2,

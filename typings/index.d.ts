@@ -28,8 +28,8 @@ export interface CommandData {
     commandType: "USER" | "MSG" | "CHI";
     desc: string;
     dmPermission?: boolean | undefined;
-    integrationTypes: Array<IntegrationTypes>,
-    contextTypes: Array<ContextTypes>,
+    integrationTypes: "GUILD" | "USER",
+    contextTypes: "GUILD" | "BOT_DM" | "PRIV_CHAN"
     run?(int: CommandInteraction): Promise<StatusMessage>;
     init?(int: CommandInteraction): null;
     options?: Array<ApplicationCommandOptionData>;

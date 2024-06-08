@@ -5,14 +5,14 @@ export class Event {
     constructor(data: EventData);
     data: EventData;
     public init(client: Client): Promise<boolean>;
-    public run(any): void;
+    public run(type, data, body): void;
 }
 
 export class Command  {
     constructor(data: CommandData);
     data: CommandData;
-    public run(int: CommandInteraction): Promise<StatusMessage>;
-    public init?(int: CommandInteraction): null;
+    public run(int): Promise<StatusMessage>;
+    public init?(int): null;
 }
 
 // Interfaces
